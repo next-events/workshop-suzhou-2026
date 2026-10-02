@@ -1,0 +1,60 @@
+# Conference content. Change the edition here before rebuilding.
+title: "NExT 2026 Workshop · Suzhou"
+description: "Responsible AI and Large Foundation Models. Join the NExT Workshop at Nanjing University Suzhou Campus, October 27–28, 2026. Participation by invitation."
+year: 2026
+city: Suzhou
+city_address: Suzhou
+conference_name: Responsible AI and Large Foundation Models
+conference_venue: Nanjing University Suzhou Campus
+conference_time: October 27–28, 2026
+date_short: 27–28 OCT
+baseurl: ""
+url: ""
+lang: en
+venue:
+  room: Room West 110
+  building: Nanyong Building
+  chinese: 南京大学苏州校区 · 南雍楼西110
+  address: "1520 Taihu Avenue, Huqiu District, Suzhou, Jiangsu 215163, P.R. China"
+  address_zh: 苏州市虎丘区太湖大道1520号，南京大学苏州校区南雍楼西110
+  map_query: 南京大学苏州校区南雍楼
+  campus_map_source: https://njusz.nju.edu.cn/52380/list.htm
+registration_message: Invitations and registration details will be sent by email at a later date.
+hotels:
+  - id: campus
+    dates: October 26–27
+    day_label: 26–27
+    location_label: On campus
+    name: International Academic Exchange Center
+    subtitle: Nanjing University Suzhou Campus
+    chinese: 南京大学苏州校区国际学术交流中心
+    address: "1520 Taihu Avenue, Huqiu District, Suzhou, Jiangsu 215163, P.R. China"
+    address_zh: 江苏省苏州市虎丘区太湖大道1520号，南京大学苏州校区国际学术交流中心
+    map_query: 南京大学苏州校区国际学术交流中心
+  - id: nikko
+    dates: October 28
+    day_label: "28"
+    location_label: Suzhou New District
+    name: Hotel Nikko Suzhou
+    subtitle: Suzhou New District
+    chinese: 苏州日航酒店
+    address: "No. 368 Changjiang Road, Suzhou New District, Suzhou, Jiangsu 215011, P.R. China"
+    address_zh: 江苏省苏州市高新区长江路368号，苏州日航酒店
+    map_query: 苏州日航酒店 长江路368号
+program:
+  - day: "27"
+    month: OCT
+    weekday: Tuesday
+    title: Workshop · Day 1
+  - day: "28"
+    month: OCT
+    weekday: Wednesday
+    title: Workshop · Day 2
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - scripts
+  - README.md
+  - SOURCES.md
+  - Gemfile
