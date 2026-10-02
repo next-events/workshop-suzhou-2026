@@ -27,13 +27,23 @@ Source: `Hotel and Venue Information.docx` supplied with the request. No source 
 
 The document contains no year, booking rate, shuttle timetable, organizers, speakers, sponsors or detailed agenda. Year 2026 follows the user's “this year.” The website uses “Suzhou” consistently for the edition and postal addresses, following the user's naming correction. Registration wording follows the user's direct instruction: future invitations by email. No emails have been sent.
 
+## Cover photograph
+
+The title-area cover shows the Suzhou Campus name stone with the four gold characters 南京大学. It is the unmodified 1080 × 810 photograph published by 苏高新数科 in its campus project article. Desktop and mobile CSS preserve all four characters without placing the title over them.
+
+- Publication: https://www.snddt.cn/sys-nd/69.html
+- Original image: https://29510514.s21i.faiusr.com/2/1/ABUIABACGAAguIGwqAYowunYjAIwuAg4qgY.jpg
+- Local asset: `assets/img/suzhou-campus-name-stone.jpg`
+
+The source is credited on the cover. This third-party photograph is not covered by the upstream code's CC0 license; attribution does not grant reuse rights.
+
 ## University photographs and campus map
 
 These are third-party university assets, not included in the upstream CC0 grant. The page and footer credit Nanjing University. Photographs are resized/compressed for the site.
 
 - Campus photo gallery: https://nh.nju.edu.cn/xysh/xyfg/szxq/1.htm
-- Cover photograph: courtyard with the large Nanjing University crest, photographed by He Xiaoqing (何小清), published in the university's Suzhou Campus photography collection: https://ltx.nju.edu.cn/yfsh/sy/jsnltzsyzpjj/20231222/i256558.html
-- Cover original: https://ltx.nju.edu.cn/DFS//file/2023/12/22/202312221453393606v9uig.jpg
+- Previous courtyard cover, retained as an unused asset: large Nanjing University crest, photographed by He Xiaoqing (何小清), published in the university's Suzhou Campus photography collection: https://ltx.nju.edu.cn/yfsh/sy/jsnltzsyzpjj/20231222/i256558.html
+- Courtyard original: https://ltx.nju.edu.cn/DFS//file/2023/12/22/202312221453393606v9uig.jpg
 - Previous campus exterior cover, retained as an unused asset: https://nh.nju.edu.cn/images/25/06/19/5au1k5zj50/5.png
 - Nanyong Building exterior: https://nh.nju.edu.cn/images/25/06/19/5au1k5zj50/3.png
 - Official campus map page: https://njusz.nju.edu.cn/52380/list.htm

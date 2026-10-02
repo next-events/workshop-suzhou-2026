@@ -24,8 +24,8 @@ try {
     assert(/site\.css\?v=[a-f0-9]{12}"/.test(html), "Version styles by content to prevent stale browser caches");
     assert(/site\.js\?v=[a-f0-9]{12}"/.test(html), "Version interactions by content to prevent stale browser caches");
     assert(html.includes('class="container event-strip"'), "Keep essential event facts directly below the cover");
-    assert(html.includes('class="hero-visual"'), "Reserve a separate image area for the campus crest");
-    assert.equal((html.match(/suzhou-campus-emblem\.jpg/g) || []).length, 3, "Use the crest photograph for the cover, preload and social preview");
+    assert(html.includes('class="hero-visual"'), "Reserve a separate image area for the campus name stone");
+    assert.equal((html.match(/suzhou-campus-name-stone\.jpg/g) || []).length, 3, "Use the name-stone photograph for the cover, preload and social preview");
     assert.equal((html.match(/class="section-heading"/g) || []).length, 7);
     for (const [, href] of html.matchAll(/\bhref="(#[^"]+)"/g)) {
       assert(ids.includes(href.slice(1)), `Missing anchor target: ${href}`);
