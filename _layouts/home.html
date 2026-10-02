@@ -8,11 +8,11 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ site.title | escape }}">
   <meta property="og:description" content="{{ site.description | escape }}">
-  <meta property="og:image" content="{{ '/assets/img/suzhou-campus.jpg' | relative_url }}">
+  <meta property="og:image" content="{{ '/assets/img/suzhou-campus-emblem.jpg' | relative_url }}">
   <title>{{ site.title }} — {{ site.conference_name }}</title>
   <link rel="icon" href="{{ '/assets/img/nextplusplus-favicon.jpg' | relative_url }}" type="image/jpeg">
   <link rel="apple-touch-icon" href="{{ '/assets/img/nextplusplus-favicon.jpg' | relative_url }}">
-  <link rel="preload" href="{{ '/assets/img/suzhou-campus.jpg' | relative_url }}" as="image" fetchpriority="high">
+  <link rel="preload" href="{{ '/assets/img/suzhou-campus-emblem.jpg' | relative_url }}" as="image" fetchpriority="high">
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.css_version }}">
   <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.js_version }}" defer></script>
 </head>
@@ -21,13 +21,15 @@
   {% include "nav-bar.html" %}
   <main id="main">
     <header class="hero" aria-labelledby="hero-title">
-      <img class="hero-image" src="{{ '/assets/img/suzhou-campus.jpg' | relative_url }}" alt="Nanjing University Suzhou Campus, with its university landmark and tree-lined approach" width="2200" height="1466" fetchpriority="high">
-      <div class="hero-shade"></div>
+      <div class="hero-visual">
+        <img class="hero-image" src="{{ '/assets/img/suzhou-campus-emblem.jpg' | relative_url }}" alt="A courtyard at Nanjing University Suzhou Campus with a large, clearly visible Nanjing University crest set into the lawn" width="2000" height="1402" fetchpriority="high">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <a class="photo-credit" href="https://ltx.nju.edu.cn/yfsh/sy/jsnltzsyzpjj/20231222/i256558.html" target="_blank" rel="noopener noreferrer">Photo · He Xiaoqing / Nanjing University ↗</a>
+      </div>
       <div class="container hero-content">
         <p class="hero-edition">NExT++ Workshop · {{ site.city }} {{ site.year }}</p>
         <h1 id="hero-title">{{ site.conference_name }}</h1>
       </div>
-      <a class="photo-credit" href="https://nh.nju.edu.cn/xysh/xyfg/szxq/1.htm" target="_blank" rel="noopener noreferrer">Campus photography · Nanjing University ↗</a>
     </header>
     <dl class="container event-strip" aria-label="Workshop at a glance">
       <div class="event-when"><dt>WHEN</dt><dd class="event-date">{{ site.conference_time }}</dd></div>

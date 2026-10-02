@@ -32,7 +32,9 @@ The document contains no year, booking rate, shuttle timetable, organizers, spea
 These are third-party university assets, not included in the upstream CC0 grant. The page and footer credit Nanjing University. Photographs are resized/compressed for the site.
 
 - Campus photo gallery: https://nh.nju.edu.cn/xysh/xyfg/szxq/1.htm
-- Campus exterior / cover: https://nh.nju.edu.cn/images/25/06/19/5au1k5zj50/5.png
+- Cover photograph: courtyard with the large Nanjing University crest, photographed by He Xiaoqing (何小清), published in the university's Suzhou Campus photography collection: https://ltx.nju.edu.cn/yfsh/sy/jsnltzsyzpjj/20231222/i256558.html
+- Cover original: https://ltx.nju.edu.cn/DFS//file/2023/12/22/202312221453393606v9uig.jpg
+- Previous campus exterior cover, retained as an unused asset: https://nh.nju.edu.cn/images/25/06/19/5au1k5zj50/5.png
 - Nanyong Building exterior: https://nh.nju.edu.cn/images/25/06/19/5au1k5zj50/3.png
 - Official campus map page: https://njusz.nju.edu.cn/52380/list.htm
 - Full-resolution map image: https://njusz.nju.edu.cn/_upload/article/images/ed/34/82aa9747475c9f419b366d3ff821/ff210578-d9e8-47e7-b301-f1ac455812b3_d.jpg
