@@ -41,7 +41,7 @@ The map is the university's published campus plan, not a newly surveyed 2026 map
 
 ## NExT++ branding
 
-The header and footer use the original, unmodified color logo published on the research centre's official homepage. The website icon is also taken from that homepage. The images are displayed proportionally; the footer places the original logo on a light background for legibility.
+The header and footer use the original, unmodified color logo published on the research centre's official homepage. The website icon is also taken from that homepage. The images are displayed proportionally on light backgrounds for legibility.
 
 - Official homepage: https://www.nextcenter.org/
 - Logo: https://static.wixstatic.com/media/be90e0_d38d1474023f4f5db9e222ae075096ee~mv2.png

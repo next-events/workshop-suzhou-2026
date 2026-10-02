@@ -1,3 +1,9 @@
 <section class="section program-section" id="schedule" aria-labelledby="program-title">
-  <div class="container program-grid"><div><p class="eyebrow section-label">04 <span></span> THE PROGRAM</p><h2 id="program-title">Two days.<br>New perspectives.</h2><p class="section-copy">The detailed program will be announced.<br>Please check back for session information.</p><span class="program-timezone">All times will be in China Standard Time (UTC+8).</span></div><div class="program-days">{% for day in site.program %}<article class="program-day"><div class="program-date"><strong>{{ day.day }}</strong><span>{{ day.month }}</span></div><div><p class="eyebrow">{{ day.weekday }}</p><h3>{{ day.title }}</h3><p>Program to be announced</p></div><span class="program-mark" aria-hidden="true">↗</span></article>{% endfor %}</div></div>
+  <h2 id="program-title">Program</h2>
+  <p>The detailed program will be announced. All times are in China Standard Time (UTC+8).</p>
+  <table class="program-table">
+    <caption class="sr-only">Workshop program for October 27–28, {{ site.year }}</caption>
+    <thead><tr><th scope="col">Date</th><th scope="col">Session</th><th scope="col">Details</th></tr></thead>
+    <tbody>{% for day in site.program %}<tr><th scope="row">{{ day.month }} {{ day.day }} <span>{{ day.weekday }}</span></th><td>{{ day.title }}</td><td>To be announced</td></tr>{% endfor %}</tbody>
+  </table>
 </section>

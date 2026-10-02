@@ -1,6 +1,6 @@
 # NExT++ 2026 Workshop · Suzhou
 
-An independent Suzhou edition based on [next-events/workshop-dec-2024](https://github.com/next-events/workshop-dec-2024). The original Jekyll/Liquid layout-and-includes structure and conference theme are retained, with a new responsive design and updated event information.
+An independent Suzhou edition based on [next-events/workshop-dec-2024](https://github.com/next-events/workshop-dec-2024). The original Jekyll/Liquid layout-and-includes structure and conference theme are retained. A short campus banner and compact, continuous information sections follow the 2024 site's reading order: introduction, registration, hotel, program, organizers, sponsors and location. The responsive layout uses the official NExT++ logo and updated Suzhou event information.
 
 ## Preview locally
 
@@ -28,8 +28,11 @@ The detailed agenda, organizing committee and sponsors are pending. Previous-edi
 ## Build and publish
 
 ```sh
+npm run check
 npm run build
 ```
+
+The check command validates current branding, section order, invitation-only registration, anchor targets and local asset paths for both local and GitHub Pages builds.
 
 `_site/` is the complete static website; no server or runtime is required in production. All images, CSS and JavaScript are local. Map links open Baidu Maps searches; the official campus map remains visible without a third-party map service.
 
