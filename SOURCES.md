@@ -6,7 +6,7 @@
 - Revision: c770ea1a40ecc02a37f44c049c29aff1de1a578f
 - Original website: https://next-events.github.io/workshop-dec-2024/
 - Original license: CC0 1.0 Universal, retained as LICENSE.
-- Retained: research theme, NExT event identity, single-page conference structure, Liquid layouts/includes, previous-edition link.
+- Retained: research theme, single-page conference structure, Liquid layouts/includes, previous-edition link. Lab naming and branding use NExT++ following the user's correction.
 - Replaced: Singapore edition details, dates, hotel/booking form, registration form, campus cover, location and map, obsolete assets and analytics.
 
 ## User-provided information
@@ -38,3 +38,14 @@ These are third-party university assets, not included in the upstream CC0 grant.
 - Full-resolution map image: https://njusz.nju.edu.cn/_upload/article/images/ed/34/82aa9747475c9f419b366d3ff821/ff210578-d9e8-47e7-b301-f1ac455812b3_d.jpg
 
 The map is the university's published campus plan, not a newly surveyed 2026 map. Venue/hotel directions use explicit Chinese place-name searches to avoid inventing precise coordinates. Users should select the matching named destination and address in their map application.
+
+## NExT++ branding
+
+The header and footer use the original, unmodified color logo published on the research centre's official homepage. The website icon is also taken from that homepage. The images are displayed proportionally; the footer places the original logo on a light background for legibility.
+
+- Official homepage: https://www.nextcenter.org/
+- Logo: https://static.wixstatic.com/media/be90e0_d38d1474023f4f5db9e222ae075096ee~mv2.png
+- Official homepage icon: https://static.wixstatic.com/media/be90e0_0cbea4e3c4404032a3228e0fde24e1cf%7Emv2.jpg/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/be90e0_0cbea4e3c4404032a3228e0fde24e1cf%7Emv2.jpg
+- NUS School of Computing page confirming the NExT++ name: https://careerfair.comp.nus.edu.sg/Company/NExT.html
+
+The logo and icon remain the property of their respective owners; they are not covered by the upstream code's CC0 license.

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "NExT 2026 Workshop in Suzhou — a new edition of next-events/workshop-dec-2024.",
+  "description": "NExT++ 2026 Workshop in Suzhou — a new edition of next-events/workshop-dec-2024.",
   "engines": { "node": ">=20" },
   "scripts": {
     "build": "node scripts/build.mjs",

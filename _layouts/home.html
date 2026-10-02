@@ -10,7 +10,8 @@
   <meta property="og:description" content="{{ site.description | escape }}">
   <meta property="og:image" content="{{ '/assets/img/suzhou-campus.jpg' | relative_url }}">
   <title>{{ site.title }} — {{ site.conference_name }}</title>
-  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/img/nextplusplus-favicon.jpg' | relative_url }}" type="image/jpeg">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/nextplusplus-favicon.jpg' | relative_url }}">
   <link rel="preload" href="{{ '/assets/img/suzhou-campus.jpg' | relative_url }}" as="image" fetchpriority="high">
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
@@ -23,9 +24,9 @@
       <img class="hero-image" src="{{ '/assets/img/suzhou-campus.jpg' | relative_url }}" alt="Nanjing University Suzhou Campus, with its university landmark and tree-lined approach" width="2200" height="1466" fetchpriority="high">
       <div class="hero-shade"></div>
       <div class="container hero-content">
-        <p class="eyebrow hero-eyebrow"><span class="small-line"></span>NExT {{ site.year }} Workshop <span class="hero-dot">/</span> {{ site.city }}</p>
+        <p class="eyebrow hero-eyebrow"><span class="small-line"></span>NExT++ {{ site.year }} Workshop <span class="hero-dot">/</span> {{ site.city }}</p>
         <h1 id="hero-title">Responsible AI <span class="hero-amp">&amp;</span><br>Large Foundation<br><em>Models.</em></h1>
-        <p class="hero-subtitle">Ideas meet. Perspectives connect.<br>The NExT conversation continues in {{ site.city }}.</p>
+        <p class="hero-subtitle">Ideas meet. Perspectives connect.<br>The NExT++ conversation continues in {{ site.city }}.</p>
         <a class="button button-light" href="#summary">Explore the workshop <span aria-hidden="true">↗</span></a>
         <div class="hero-bottom">
           <div class="hero-location"><span class="location-dot" aria-hidden="true"></span><span>{{ site.conference_venue }}<br><span class="hero-location-zh" lang="zh-CN">南京大学苏州校区</span></span></div>
@@ -43,8 +44,8 @@
     {% include "organizer.html" %}
   </main>
   <footer class="site-footer">
-    <div class="container footer-main"><a class="brand footer-brand" href="#page-top" aria-label="NExT Workshop, back to top">NExT<span class="brand-dot">.</span><span class="brand-edition">WORKSHOP<br>{{ site.city | upcase }} {{ site.year }}</span></a><p>Responsible AI and Large Foundation Models<br><span>{{ site.conference_time }} · {{ site.city }}, China</span></p><a class="back-top" href="#page-top">Back to top ↑</a></div>
-    <div class="container footer-bottom"><span>© {{ site.year }} NExT Workshop</span><a href="https://next-events.github.io/workshop-dec-2024/" target="_blank" rel="noopener noreferrer">Previous edition ↗</a><span>Campus imagery &amp; map: Nanjing University</span></div>
+    <div class="container footer-main"><a class="brand footer-brand" href="#page-top" aria-label="NExT++ Workshop, back to top"><span class="footer-logo-frame"><img class="brand-logo" src="{{ '/assets/img/nextplusplus-logo.png' | relative_url }}" width="247" height="80" alt="NExT++ Research Centre"></span><span class="brand-edition">WORKSHOP<br>{{ site.city | upcase }} {{ site.year }}</span></a><p>Responsible AI and Large Foundation Models<br><span>{{ site.conference_time }} · {{ site.city }}, China</span></p><a class="back-top" href="#page-top">Back to top ↑</a></div>
+    <div class="container footer-bottom"><span>© {{ site.year }} NExT++ Workshop</span><a href="https://next-events.github.io/workshop-dec-2024/" target="_blank" rel="noopener noreferrer">Previous edition ↗</a><span>Campus imagery &amp; map: Nanjing University</span></div>
   </footer>
   <div class="toast" role="status" aria-live="polite" hidden></div>
 </body>

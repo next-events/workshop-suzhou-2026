@@ -1,4 +1,4 @@
-# NExT 2026 Workshop · Suzhou
+# NExT++ 2026 Workshop · Suzhou
 
 An independent Suzhou edition based on [next-events/workshop-dec-2024](https://github.com/next-events/workshop-dec-2024). The original Jekyll/Liquid layout-and-includes structure and conference theme are retained, with a new responsive design and updated event information.
 

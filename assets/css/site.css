@@ -173,14 +173,13 @@ h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  font-size: 36px;
-  letter-spacing: -2px;
-  font-weight: 700;
   line-height: 1;
   flex-shrink: 0;
 }
-.brand-dot {
-  color: #91876b;
+.brand-logo {
+  width: 124px;
+  height: auto;
+  flex-shrink: 0;
 }
 .brand-edition {
   font-size: 9px;
@@ -834,16 +833,16 @@ dd {
   justify-content: space-between;
   gap: 35px;
 }
-.footer-brand {
-  font-size: 33px;
+.footer-logo-frame {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 11px;
+  background: var(--paper);
 }
 .footer-brand .brand-edition {
   border-color: #696273;
   color: #d2cdd9;
   font-size: 8px;
-}
-.footer-brand .brand-dot {
-  color: #c7b998;
 }
 .footer-main p {
   font-size: 11px;
@@ -1065,8 +1064,8 @@ dd {
     top: 72px;
     padding-inline: 20px;
   }
-  .brand {
-    font-size: 32px;
+  .brand-logo {
+    width: 112px;
   }
   .brand-edition {
     font-size: 8px;
@@ -1355,9 +1354,6 @@ dd {
     align-items: start;
     gap: 12px;
     font-size: 9px;
-  }
-  .footer-brand {
-    font-size: 33px;
   }
   .site-footer {
     padding: 37px 0 26px;
