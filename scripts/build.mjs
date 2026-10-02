@@ -1,4 +1,5 @@
 import { readFile, writeFile, mkdir, cp } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { Liquid } from "liquidjs";
@@ -10,6 +11,10 @@ export const root = path.resolve(
 );
 export async function build() {
   const site = parse(await readFile(path.join(root, "_config.yml"), "utf8"));
+  site.css_version = createHash("sha256")
+    .update(await readFile(path.join(root, "assets/css/site.css")))
+    .digest("hex")
+    .slice(0, 12);
   site.baseurl = (process.env.SITE_BASEURL ?? site.baseurl ?? "").replace(
     /\/$/,
     "",

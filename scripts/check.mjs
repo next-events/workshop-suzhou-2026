@@ -21,12 +21,13 @@ try {
     assert.deepEqual(sections, ["summary", "registration", "hotel", "schedule", "organizer", "sponsors", "location"]);
     assert.equal((html.match(/class="hotel-row"/g) || []).length, 2);
     assert.equal((html.match(/data-copy=/g) || []).length, 3);
+    assert(/site\.css\?v=[a-f0-9]{12}"/.test(html), "Version styles by content to prevent stale browser caches");
     for (const [, href] of html.matchAll(/\bhref="(#[^"]+)"/g)) {
       assert(ids.includes(href.slice(1)), `Missing anchor target: ${href}`);
     }
     for (const [, asset] of html.matchAll(/(?:src|href)="(\/[^"#]+)"/g)) {
       assert(asset.startsWith(`${base}/assets/`), `Incorrect asset base: ${asset}`);
-      const target = path.join(root, "_site", asset.slice(base.length));
+      const target = path.join(root, "_site", asset.split("?")[0].slice(base.length));
       assert((await stat(target)).size > 0, `Missing or empty asset: ${target}`);
     }
     console.log(`Content, anchors and asset checks passed (${base || "/"}).`);
