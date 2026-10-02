@@ -22,6 +22,9 @@ try {
     assert.equal((html.match(/class="hotel-row"/g) || []).length, 2);
     assert.equal((html.match(/data-copy=/g) || []).length, 3);
     assert(/site\.css\?v=[a-f0-9]{12}"/.test(html), "Version styles by content to prevent stale browser caches");
+    assert(/site\.js\?v=[a-f0-9]{12}"/.test(html), "Version interactions by content to prevent stale browser caches");
+    assert(html.includes('class="container event-strip"'), "Keep essential event facts directly below the cover");
+    assert.equal((html.match(/class="section-heading"/g) || []).length, 7);
     for (const [, href] of html.matchAll(/\bhref="(#[^"]+)"/g)) {
       assert(ids.includes(href.slice(1)), `Missing anchor target: ${href}`);
     }

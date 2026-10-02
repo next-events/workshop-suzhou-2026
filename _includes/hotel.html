@@ -1,21 +1,24 @@
 <section class="section hotels-section" id="hotel" aria-labelledby="hotel-title">
-  <h2 id="hotel-title">Hotel</h2>
-  <div class="hotel-list">
-    {% for hotel in site.hotels %}
-    <article class="hotel-row">
-      <div class="hotel-date"><strong>{{ hotel.dates }}</strong><span>{{ site.year }} · {{ hotel.location_label }}</span></div>
-      <div class="hotel-body">
-        <h3>{{ hotel.name }}</h3>
-        <p>{{ hotel.subtitle }}</p>
-        <p class="address">{{ hotel.address }}</p>
-        <p class="chinese-address" lang="zh-CN">{{ hotel.chinese }}</p>
-      </div>
-      <div class="hotel-actions">
-        <a href="https://map.baidu.com/search/{{ hotel.map_query | url_encode }}/" target="_blank" rel="noopener noreferrer" aria-label="View {{ hotel.name }} on Baidu Maps">View on map ↗</a>
-        <button class="copy-address" type="button" data-copy="{{ hotel.address_zh | escape }}">Copy address</button>
-      </div>
-    </article>
-    {% endfor %}
+  <div class="section-heading"><p class="section-kicker">YOUR STAY</p><h2 id="hotel-title">Hotel</h2></div>
+  <div class="section-body">
+    <div class="hotel-list">
+      {% for hotel in site.hotels %}
+      <article class="hotel-row">
+        <div class="hotel-date"><strong>{{ hotel.dates }}</strong><span>{{ site.year }}</span></div>
+        <div class="hotel-body">
+          <p class="hotel-category">{{ hotel.location_label }}</p>
+          <h3>{{ hotel.name }}</h3>
+          <p>{{ hotel.subtitle }}</p>
+          <p class="address">{{ hotel.address }}</p>
+          <p class="chinese-address" lang="zh-CN">{{ hotel.chinese }}</p>
+        </div>
+        <div class="hotel-actions">
+          <a href="https://map.baidu.com/search/{{ hotel.map_query | url_encode }}/" target="_blank" rel="noopener noreferrer" aria-label="View {{ hotel.name }} on Baidu Maps">View map ↗</a>
+          <button class="copy-address" type="button" data-copy="{{ hotel.address_zh | escape }}">Copy address</button>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="section-note">Please refer to your invitation email for further visit arrangements.</p>
   </div>
-  <p class="section-note">Please refer to your invitation email for further visit arrangements.</p>
 </section>

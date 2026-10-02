@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" href="{{ '/assets/img/nextplusplus-favicon.jpg' | relative_url }}">
   <link rel="preload" href="{{ '/assets/img/suzhou-campus.jpg' | relative_url }}" as="image" fetchpriority="high">
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.css_version }}">
-  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.js_version }}" defer></script>
 </head>
 <body id="page-top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -24,13 +24,16 @@
       <img class="hero-image" src="{{ '/assets/img/suzhou-campus.jpg' | relative_url }}" alt="Nanjing University Suzhou Campus, with its university landmark and tree-lined approach" width="2200" height="1466" fetchpriority="high">
       <div class="hero-shade"></div>
       <div class="container hero-content">
+        <p class="hero-edition">NExT++ Workshop · {{ site.city }} {{ site.year }}</p>
         <h1 id="hero-title">{{ site.conference_name }}</h1>
-        <p class="hero-edition">NExT++ {{ site.year }} Workshop, {{ site.city }}</p>
-        <p class="hero-date">{{ site.conference_time }}</p>
-        <p class="hero-venue">{{ site.conference_venue }} <span lang="zh-CN">· 南京大学苏州校区</span></p>
       </div>
       <a class="photo-credit" href="https://nh.nju.edu.cn/xysh/xyfg/szxq/1.htm" target="_blank" rel="noopener noreferrer">Campus photography · Nanjing University ↗</a>
     </header>
+    <dl class="container event-strip" aria-label="Workshop at a glance">
+      <div class="event-when"><dt>WHEN</dt><dd class="event-date">{{ site.conference_time }}</dd></div>
+      <div class="event-where"><dt>WHERE</dt><dd class="event-place">{{ site.conference_venue }}<span lang="zh-CN">南京大学苏州校区</span></dd></div>
+      <div class="event-attendance"><dt>ATTENDANCE</dt><dd><a href="#registration">By invitation <span aria-hidden="true">↗</span></a></dd></div>
+    </dl>
     <div class="container conference-content">
       {% include "summary.html" %}
       {% include "registration.html" %}

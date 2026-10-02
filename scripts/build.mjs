@@ -15,6 +15,10 @@ export async function build() {
     .update(await readFile(path.join(root, "assets/css/site.css")))
     .digest("hex")
     .slice(0, 12);
+  site.js_version = createHash("sha256")
+    .update(await readFile(path.join(root, "assets/js/site.js")))
+    .digest("hex")
+    .slice(0, 12);
   site.baseurl = (process.env.SITE_BASEURL ?? site.baseurl ?? "").replace(
     /\/$/,
     "",

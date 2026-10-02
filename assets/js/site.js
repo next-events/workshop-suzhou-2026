@@ -50,22 +50,44 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
   });
 });
 
-if ("IntersectionObserver" in window) {
-  const sectionLinks = [...navLinks.querySelectorAll("a")];
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        sectionLinks.forEach((link) => {
-          if (link.hash === `#${entry.target.id}`)
-            link.setAttribute("aria-current", "location");
-          else link.removeAttribute("aria-current");
-        });
-      }
-    },
-    { rootMargin: "-20% 0px -60% 0px" },
-  );
-  document
-    .querySelectorAll("main section[id], .hero")
-    .forEach((section) => observer.observe(section));
+// Follow the section just below the sticky navigation, including compact sections.
+const sectionLinks = [...navLinks.querySelectorAll("a")];
+const sections = sectionLinks
+  .map((link) => document.querySelector(link.hash))
+  .filter(Boolean);
+let navigationFramePending = false;
+
+function updateActiveSection() {
+  const readingLine = document.querySelector(".site-nav").getBoundingClientRect().bottom + 36;
+  let active = null;
+  let activeTop = -Infinity;
+  for (const section of sections) {
+    const top = section.getBoundingClientRect().top;
+    if (top > readingLine) continue;
+    if (top > activeTop + 1 || (Math.abs(top - activeTop) <= 1 && location.hash === `#${section.id}`)) {
+      active = section;
+      activeTop = top;
+    }
+  }
+  if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+    active = sections.at(-1);
+  }
+  sectionLinks.forEach((link) => {
+    if (active && link.hash === `#${active.id}`) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
 }
+
+function scheduleNavigationUpdate() {
+  if (navigationFramePending) return;
+  navigationFramePending = true;
+  requestAnimationFrame(() => {
+    navigationFramePending = false;
+    updateActiveSection();
+  });
+}
+window.addEventListener("scroll", scheduleNavigationUpdate, { passive: true });
+window.addEventListener("resize", scheduleNavigationUpdate);
+window.addEventListener("hashchange", scheduleNavigationUpdate);
+window.addEventListener("load", scheduleNavigationUpdate);
+scheduleNavigationUpdate();

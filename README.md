@@ -15,6 +15,8 @@ Open http://localhost:4173. Source changes rebuild automatically; refresh the br
 
 ## Edit content
 
+The desktop layout pairs section headings with compact content columns. Section boundaries use 96px spacing (68px on mobile), while hotel rows and the program table remain compact. A shared event strip below the campus cover presents the date, location and invitation status. CSS and JavaScript URLs are content-versioned to avoid stale updates.
+
 - `_config.yml`: edition, year, dates, venue, hotel addresses and invitation wording.
 - `_includes/`: overview, registration, venue/map, hotel, program and organizer sections.
 - `_layouts/home.html`: page structure, cover and footer.
