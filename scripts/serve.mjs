@@ -15,6 +15,7 @@ const types = {
   ".png": "image/png",
   ".svg": "image/svg+xml",
   ".webp": "image/webp",
+  ".ttf": "font/ttf",
 };
 const server = http.createServer(async (request, response) => {
   try {

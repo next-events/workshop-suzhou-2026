@@ -52,9 +52,8 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
 
 // Follow the section just below the sticky navigation, including compact sections.
 const sectionLinks = [...navLinks.querySelectorAll("a")];
-const sections = sectionLinks
-  .map((link) => document.querySelector(link.hash))
-  .filter(Boolean);
+// Read page order, since the registration action is last in the navigation.
+const sections = [...document.querySelectorAll('.conference-content section[id]')];
 let navigationFramePending = false;
 
 function updateActiveSection() {

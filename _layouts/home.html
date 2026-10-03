@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ site.description | escape }}">
-  <meta name="theme-color" content="#403d54">
+  <meta name="theme-color" content="#f8f7fa">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ site.title | escape }}">
   <meta property="og:description" content="{{ site.description | escape }}">
@@ -13,6 +13,7 @@
   <link rel="icon" href="{{ '/assets/img/nextplusplus-favicon.jpg' | relative_url }}" type="image/jpeg">
   <link rel="apple-touch-icon" href="{{ '/assets/img/nextplusplus-favicon.jpg' | relative_url }}">
   <link rel="preload" href="{{ '/assets/img/suzhou-campus-name-stone.jpg' | relative_url }}" as="image" fetchpriority="high">
+  <link rel="preload" href="{{ '/assets/fonts/manrope-variable.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.css_version }}">
   <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.js_version }}" defer></script>
 </head>
@@ -20,22 +21,29 @@
   <a class="skip-link" href="#main">Skip to content</a>
   {% include "nav-bar.html" %}
   <main id="main">
-    <header class="hero" aria-labelledby="hero-title">
-      <div class="hero-visual">
-        <img class="hero-image" src="{{ '/assets/img/suzhou-campus-name-stone.jpg' | relative_url }}" alt="The name stone at Nanjing University Suzhou Campus, with the four large gold characters 南京大学 clearly visible in front of the campus buildings" width="1080" height="810" fetchpriority="high">
-        <div class="hero-shade" aria-hidden="true"></div>
-        <a class="photo-credit" href="https://www.snddt.cn/sys-nd/69.html" target="_blank" rel="noopener noreferrer">Photo source · <span lang="zh-CN">苏高新数科</span> ↗</a>
-      </div>
-      <div class="container hero-content">
+    <div class="opening">
+    <header class="container hero" aria-labelledby="hero-title">
+      <div class="hero-content">
         <p class="hero-edition">NExT++ Workshop · {{ site.city }} {{ site.year }}</p>
-        <h1 id="hero-title">{{ site.conference_name }}</h1>
+        {% assign title_parts = site.conference_name | split: ' and ' %}
+        <h1 id="hero-title">{% if title_parts.size == 2 %}{{ title_parts[0] }} <span>and {{ title_parts[1] }}</span>{% else %}{{ site.conference_name }}{% endif %}</h1>
+        <p class="hero-location">{{ site.conference_venue }}</p>
+        <div class="hero-actions"><a class="button-primary" href="#location">Plan your visit <span aria-hidden="true">↗</span></a><a class="button-text" href="#registration">Participation details <span aria-hidden="true">→</span></a></div>
       </div>
+      <figure class="hero-visual">
+        <div class="hero-photo">
+          <img class="hero-image" src="{{ '/assets/img/suzhou-campus-name-stone.jpg' | relative_url }}" alt="The name stone at Nanjing University Suzhou Campus, with the four large gold characters 南京大学 clearly visible in front of the campus buildings" width="1080" height="810" fetchpriority="high">
+          <a class="photo-credit" href="https://www.snddt.cn/sys-nd/69.html" target="_blank" rel="noopener noreferrer">Photo source · <span lang="zh-CN">苏高新数科</span> ↗</a>
+        </div>
+        <figcaption><span>Nanjing University<span lang="zh-CN">南京大学 · 苏州校区</span></span><span class="campus-caption">SUZHOU, CHINA</span></figcaption>
+      </figure>
     </header>
     <dl class="container event-strip" aria-label="Workshop at a glance">
       <div class="event-when"><dt>WHEN</dt><dd class="event-date">{{ site.conference_time }}</dd></div>
       <div class="event-where"><dt>WHERE</dt><dd class="event-place">{{ site.conference_venue }}<span lang="zh-CN">南京大学苏州校区</span></dd></div>
       <div class="event-attendance"><dt>ATTENDANCE</dt><dd><a href="#registration">By invitation <span aria-hidden="true">↗</span></a></dd></div>
     </dl>
+    </div>
     <div class="container conference-content">
       {% include "summary.html" %}
       {% include "registration.html" %}

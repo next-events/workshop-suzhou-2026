@@ -1,5 +1,16 @@
 # Content and asset provenance
 
+## Layout and typography
+
+The October 2026 visual refresh is custom HTML/CSS for this repository. The Confer and ThinkForward previews were reviewed for conference information hierarchy and section grouping; no template code, artwork, sample speakers or event claims were copied, and no template was purchased.
+
+- Confer reference: https://www.framer.com/marketplace/templates/confer/
+- ThinkForward reference: https://www.framer.com/marketplace/templates/thinkforward/
+- Typeface: Manrope, self-hosted from Google Fonts under the SIL Open Font License 1.1. License retained at `assets/fonts/OFL-Manrope.txt`.
+- Font source: https://github.com/google/fonts/tree/main/ofl/manrope
+
+The site remains a static Liquid/HTML/CSS build deployed to GitHub Pages. Registration stays invitation-only; no third-party registration service or form was added.
+
 ## Upstream project
 
 - https://github.com/next-events/workshop-dec-2024

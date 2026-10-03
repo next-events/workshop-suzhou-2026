@@ -27,6 +27,12 @@ try {
     assert(html.includes('class="hero-visual"'), "Reserve a separate image area for the campus name stone");
     assert.equal((html.match(/suzhou-campus-name-stone\.jpg/g) || []).length, 3, "Use the name-stone photograph for the cover, preload and social preview");
     assert.equal((html.match(/class="section-heading"/g) || []).length, 7);
+    assert(html.includes('class="hero-actions"'), "Keep useful cover links to venue and participation details");
+    assert(html.includes('class="map-heading"'), "Label the venue map clearly");
+    assert(html.includes('manrope-variable.ttf'), "Preload the locally hosted typeface");
+    assert((await stat(path.join(root, "assets/fonts/manrope-variable.ttf"))).size > 0);
+    assert((await readFile(path.join(root, "assets/fonts/OFL-Manrope.txt"), "utf8")).includes("SIL OPEN FONT LICENSE"));
+    assert.equal(await readFile(path.join(root, "README.md"), "utf8"), "# NExT++ 2026 Workshop · Suzhou\n", "Keep the user's title-only README");
     for (const [, href] of html.matchAll(/\bhref="(#[^"]+)"/g)) {
       assert(ids.includes(href.slice(1)), `Missing anchor target: ${href}`);
     }
