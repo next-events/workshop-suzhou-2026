@@ -30,6 +30,8 @@ try {
     assert.equal((html.match(/suzhou-jinji-lake\.jpg/g) || []).length, 3, "Use the Suzhou city photograph for the cover, preload and social preview");
     assert(!html.includes('suzhou-campus-name-stone.jpg'), "The cover now represents Suzhou city rather than the university");
     assert(html.includes('CC BY-SA 4.0') && html.includes('铁头娃蛤蛤'), "Keep the city photograph's author and license attribution");
+    assert(!html.includes('hero-attribution'), "Keep the attribution line off the cover");
+    assert(/<details class="photo-credits"><summary>Photo credits<\/summary>/.test(html), "Keep photo credits in a collapsed footer disclosure");
     assert(html.includes('nanyong-building.jpg') && html.includes('campus-map.jpg'), "Keep the university's venue photo and campus map");
     assert.equal((html.match(/class="section-heading"/g) || []).length, 7);
     assert(html.includes('class="hero-actions"'), "Keep useful cover links to venue and participation details");

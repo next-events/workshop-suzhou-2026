@@ -49,7 +49,7 @@ The title-area cover now shows Suzhou's Jinji Lake and Gate of the Orient, follo
 - Downloaded thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg/1280px-%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg
 - Changes: Wikimedia contributor Nkon21 cropped the original in 2023; Wikimedia generated the resized thumbnail. The site uses responsive CSS cropping, without recoloring or retouching. The image and its presentation crops remain under CC BY-SA 4.0, separate from the upstream code's CC0 license.
 
-Author, source, license and cropping/resizing credit appear alongside the cover. University venue photography and the campus map remain in the Location section.
+Author, source, license and cropping/resizing credit appear in the footer's expandable “Photo credits,” keeping the cover caption clean at the user's request. The cover retains its source link. University venue photography and the campus map remain in the Location section.
 
 ### Previous campus name-stone cover (unused)
 

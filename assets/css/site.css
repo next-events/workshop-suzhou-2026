@@ -79,9 +79,6 @@ strong { font-weight: 650; }
 .hero-visual figcaption { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 10px 7px; font-size: 12px; font-weight: 650; }
 .hero-visual figcaption span[lang] { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; font-weight: 400; letter-spacing: 1px; }
 .campus-caption { color: #756180; font-size: 8px; font-weight: 600; letter-spacing: 1.4px; white-space: nowrap; }
-.hero-attribution { padding: 0 10px 7px; color: #756180; font-size: 9px; line-height: 1.6; }
-.hero-attribution a { color: inherit; text-decoration: none; }
-.hero-attribution a:hover { text-decoration: underline; }
 .event-strip { display: grid; grid-template-columns: 1fr 1.4fr .8fr; gap: 32px; padding-block: 24px 27px; border-block: 1px solid #e4ddea; }
 .event-strip > div { min-width: 0; }
 .event-strip > div + div { padding-left: 32px; border-left: 1px solid #e4ddea; }
@@ -187,6 +184,8 @@ strong { font-weight: 650; }
 .footer-inner { display: flex; align-items: center; gap: 24px; }
 .footer-brand .brand-logo { width: 86px; }
 .footer-credit { display: grid; gap: 3px; color: #75617f; font-size: 10px; }
+.photo-credits summary { width: fit-content; cursor: pointer; color: var(--accent); }
+.photo-credits p { max-width: 390px; margin-top: 6px; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-left: auto; font-size: 11px; }
 .footer-links a { text-decoration: none; }
 .toast { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 40; width: max-content; max-width: calc(100% - 32px); padding: 13px 18px; border-radius: 8px; background: #503760; color: #fff; box-shadow: 0 8px 28px #30213d26; font-size: 12px; }
@@ -264,7 +263,6 @@ strong { font-weight: 650; }
   .hero-image { height: auto; aspect-ratio: 1.6; object-fit: cover; object-position: center 48%; }
   .hero-visual figcaption { padding: 10px 7px 6px; font-size: 10px; }
   .hero-visual figcaption span[lang] { font-size: 9px; letter-spacing: .5px; }
-  .hero-attribution { padding-inline: 7px; font-size: 8px; }
   .campus-caption { display: inline; font-size: 7px; }
   .photo-credit { top: 7px; right: 7px; font-size: 7px; padding: 3px 5px; }
   .event-strip { grid-template-columns: 1fr 1fr; gap: 18px 16px; padding-block: 21px; }
