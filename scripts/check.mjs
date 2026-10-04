@@ -12,6 +12,8 @@ try {
     const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
     assert.equal(ids.length, new Set(ids).size, "IDs must be unique");
     assert.equal((html.match(/<h1\b/g) || []).length, 1);
+    assert(html.includes('<h1 id="hero-title">Agentic AI</h1>'), "Use this year's Agentic AI theme");
+    assert(!/Responsible AI|Large Foundation Models/.test(html), "Remove the previous edition's theme everywhere");
     assert(!/NExT(?!\+\+)/.test(html), "Use the correct NExT++ name");
     assert(!/Soochow|Singapore/.test(html), "Use current Suzhou event details");
     assert(!/{{|{%/.test(html), "All Liquid templates must be rendered");
@@ -24,8 +26,11 @@ try {
     assert(/site\.css\?v=[a-f0-9]{12}"/.test(html), "Version styles by content to prevent stale browser caches");
     assert(/site\.js\?v=[a-f0-9]{12}"/.test(html), "Version interactions by content to prevent stale browser caches");
     assert(html.includes('class="container event-strip"'), "Keep essential event facts directly below the cover");
-    assert(html.includes('class="hero-visual"'), "Reserve a separate image area for the campus name stone");
-    assert.equal((html.match(/suzhou-campus-name-stone\.jpg/g) || []).length, 3, "Use the name-stone photograph for the cover, preload and social preview");
+    assert(html.includes('class="hero-visual"'), "Reserve a separate image area for the Suzhou cityscape");
+    assert.equal((html.match(/suzhou-jinji-lake\.jpg/g) || []).length, 3, "Use the Suzhou city photograph for the cover, preload and social preview");
+    assert(!html.includes('suzhou-campus-name-stone.jpg'), "The cover now represents Suzhou city rather than the university");
+    assert(html.includes('CC BY-SA 4.0') && html.includes('铁头娃蛤蛤'), "Keep the city photograph's author and license attribution");
+    assert(html.includes('nanyong-building.jpg') && html.includes('campus-map.jpg'), "Keep the university's venue photo and campus map");
     assert.equal((html.match(/class="section-heading"/g) || []).length, 7);
     assert(html.includes('class="hero-actions"'), "Keep useful cover links to venue and participation details");
     assert(html.includes('class="map-heading"'), "Label the venue map clearly");

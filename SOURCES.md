@@ -17,7 +17,7 @@ The site remains a static Liquid/HTML/CSS build deployed to GitHub Pages. Regist
 - Revision: c770ea1a40ecc02a37f44c049c29aff1de1a578f
 - Original website: https://next-events.github.io/workshop-dec-2024/
 - Original license: CC0 1.0 Universal, retained as LICENSE.
-- Retained: research theme, single-page conference structure, Liquid layouts/includes, previous-edition link. Lab naming and branding use NExT++ following the user's correction.
+- Retained: single-page conference structure, Liquid layouts/includes, previous-edition link. Lab naming and branding use NExT++ following the user's correction. The 2026 theme is Agentic AI, following the user's October 4 instruction; the previous edition's theme is no longer used.
 - Replaced: Singapore edition details, dates, hotel/booking form, registration form, campus cover, location and map, obsolete assets and analytics.
 
 ## User-provided information
@@ -40,13 +40,26 @@ The document contains no year, booking rate, shuttle timetable, organizers, spea
 
 ## Cover photograph
 
-The title-area cover shows the Suzhou Campus name stone with the four gold characters 南京大学. It is the unmodified 1080 × 810 photograph published by 苏高新数科 in its campus project article. Desktop and mobile CSS preserve all four characters without placing the title over them.
+The title-area cover now shows Suzhou's Jinji Lake and Gate of the Orient, following the user's request for a Suzhou city photograph rather than a university cover. The photograph is a 2017 cityscape, not a claim about the city's current construction status.
+
+- Work: 东方之门1.jpg, photographed by 铁头娃蛤蛤 on August 23, 2017.
+- Source: https://commons.wikimedia.org/wiki/File:%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg
+- License: Creative Commons Attribution-ShareAlike 4.0 International, https://creativecommons.org/licenses/by-sa/4.0/
+- Local asset: `assets/img/suzhou-jinji-lake.jpg` (1280 × 914).
+- Downloaded thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg/1280px-%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg
+- Changes: Wikimedia contributor Nkon21 cropped the original in 2023; Wikimedia generated the resized thumbnail. The site uses responsive CSS cropping, without recoloring or retouching. The image and its presentation crops remain under CC BY-SA 4.0, separate from the upstream code's CC0 license.
+
+Author, source, license and cropping/resizing credit appear alongside the cover. University venue photography and the campus map remain in the Location section.
+
+### Previous campus name-stone cover (unused)
+
+The previous cover is retained as an unused asset. It is the unmodified 1080 × 810 photograph published by 苏高新数科 in its campus project article.
 
 - Publication: https://www.snddt.cn/sys-nd/69.html
 - Original image: https://29510514.s21i.faiusr.com/2/1/ABUIABACGAAguIGwqAYowunYjAIwuAg4qgY.jpg
 - Local asset: `assets/img/suzhou-campus-name-stone.jpg`
 
-The source is credited on the cover. This third-party photograph is not covered by the upstream code's CC0 license; attribution does not grant reuse rights.
+This third-party photograph is not covered by the upstream code's CC0 license; attribution does not grant reuse rights.
 
 ## University photographs and campus map
 

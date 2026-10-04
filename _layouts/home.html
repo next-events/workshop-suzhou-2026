@@ -6,13 +6,14 @@
   <meta name="description" content="{{ site.description | escape }}">
   <meta name="theme-color" content="#f8f7fa">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ site.title | escape }}">
+  <meta property="og:title" content="{{ site.title | escape }} — {{ site.conference_name | escape }}">
   <meta property="og:description" content="{{ site.description | escape }}">
-  <meta property="og:image" content="{{ '/assets/img/suzhou-campus-name-stone.jpg' | relative_url }}">
+  <meta property="og:image" content="{{ '/assets/img/suzhou-jinji-lake.jpg' | relative_url }}">
+  <meta property="og:image:alt" content="Suzhou cityscape with Jinji Lake and the Gate of the Orient">
   <title>{{ site.title }} — {{ site.conference_name }}</title>
   <link rel="icon" href="{{ '/assets/img/nextplusplus-favicon.jpg' | relative_url }}" type="image/jpeg">
   <link rel="apple-touch-icon" href="{{ '/assets/img/nextplusplus-favicon.jpg' | relative_url }}">
-  <link rel="preload" href="{{ '/assets/img/suzhou-campus-name-stone.jpg' | relative_url }}" as="image" fetchpriority="high">
+  <link rel="preload" href="{{ '/assets/img/suzhou-jinji-lake.jpg' | relative_url }}" as="image" fetchpriority="high">
   <link rel="preload" href="{{ '/assets/fonts/manrope-variable.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.css_version }}">
   <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.js_version }}" defer></script>
@@ -25,17 +26,17 @@
     <header class="container hero" aria-labelledby="hero-title">
       <div class="hero-content">
         <p class="hero-edition">NExT++ Workshop · {{ site.city }} {{ site.year }}</p>
-        {% assign title_parts = site.conference_name | split: ' and ' %}
-        <h1 id="hero-title">{% if title_parts.size == 2 %}{{ title_parts[0] }} <span>and {{ title_parts[1] }}</span>{% else %}{{ site.conference_name }}{% endif %}</h1>
+        <h1 id="hero-title">{{ site.conference_name }}</h1>
         <p class="hero-location">{{ site.conference_venue }}</p>
         <div class="hero-actions"><a class="button-primary" href="#location">Plan your visit <span aria-hidden="true">↗</span></a><a class="button-text" href="#registration">Participation details <span aria-hidden="true">→</span></a></div>
       </div>
       <figure class="hero-visual">
         <div class="hero-photo">
-          <img class="hero-image" src="{{ '/assets/img/suzhou-campus-name-stone.jpg' | relative_url }}" alt="The name stone at Nanjing University Suzhou Campus, with the four large gold characters 南京大学 clearly visible in front of the campus buildings" width="1080" height="810" fetchpriority="high">
-          <a class="photo-credit" href="https://www.snddt.cn/sys-nd/69.html" target="_blank" rel="noopener noreferrer">Photo source · <span lang="zh-CN">苏高新数科</span> ↗</a>
+          <img class="hero-image" src="{{ '/assets/img/suzhou-jinji-lake.jpg' | relative_url }}" alt="Aerial view of Suzhou, with Jinji Lake, the Gate of the Orient and the surrounding city skyline" width="1280" height="914" fetchpriority="high">
+          <a class="photo-credit" href="https://commons.wikimedia.org/wiki/File:%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg" target="_blank" rel="noopener noreferrer">Photo source ↗</a>
         </div>
-        <figcaption><span>Nanjing University<span lang="zh-CN">南京大学 · 苏州校区</span></span><span class="campus-caption">SUZHOU, CHINA</span></figcaption>
+        <figcaption><span>Jinji Lake &amp; Gate of the Orient<span lang="zh-CN">苏州 · 金鸡湖与东方之门</span></span><span class="campus-caption">SUZHOU, CHINA</span></figcaption>
+        <p class="hero-attribution">Photo: <a href="https://commons.wikimedia.org/wiki/File:%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg" target="_blank" rel="noopener noreferrer" lang="zh-CN">铁头娃蛤蛤</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · Cropped &amp; resized</p>
       </figure>
     </header>
     <dl class="container event-strip" aria-label="Workshop at a glance">
