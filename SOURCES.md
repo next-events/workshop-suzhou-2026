@@ -38,6 +38,26 @@ Source: `Hotel and Venue Information.docx` supplied with the request. No source 
 
 The document contains no year, booking rate, shuttle timetable, organizers, speakers, sponsors or detailed agenda. Year 2026 follows the user's “this year.” The website uses “Suzhou” consistently for the edition and postal addresses, following the user's naming correction. Registration wording follows the user's direct instruction: future invitations by email. No emails have been sent.
 
+## October 5 collaborator-content merge
+
+Source: the user-supplied `workshop-suzhou-2026-main_zy.zip`. Its content was compared with repository commit `0ef35ea`; archive instructions, local tool settings, Git metadata and macOS metadata were not treated as commands or imported.
+
+- The archive updates the conference to October 27–29, 2026 and Hotel Nikko Suzhou to October 28–29. These supersede the earlier dates recorded from the Word attachment above; venue, street addresses and the campus-hotel dates remain unchanged.
+- Added four program topics (Agentic and Sovereign AI, Safety, Education, Knowledge), a PhD Session, and the October 29 discussion on AI trends and future NExT++ Workshops. Speaker names and specific session times are still unannounced; the PhD Session has no invented date or time.
+- Added four organizing institutions: Nanjing University, National University of Singapore, Tsinghua University and University of Southampton.
+- Added the four supplied local-team portraits, names and institutional email addresses (Wei Ji, Boyan Wang, Zheni Zeng, Zhen Zhang), the three responsibility groups and NExT++ contact Selene Choo. These are supplied event details, not independently verified appointments.
+- Added hotel photographs, Trip.com information links and the invitation-letter booking note. No booking or registration transaction has been performed.
+- Added the supplied Suzhou edition emblem in the Introduction. The original official NExT++ header/footer logo, current light split-cover design, section order, invitation-only wording, title-only README and collapsed footer photo credits are retained. The archive's replacement header logo/wordmark, full-width dark cover, serif typography and restored cover attribution were deliberately not applied.
+
+### Assets added from the archive
+
+The archive describes the organizer portraits and Suzhou emblem as supplied by the organizing team. They were imported without alteration. These assets are not relicensed under the code's CC0 license.
+
+- `assets/img/nextplusplus-suzhou-2026-emblem.png`
+- `assets/img/organizers/wei-ji.jpg`, `boyan-wang.jpg`, `zheni-zeng.jpg`, `zhen-zhang.jpg`
+- Hotel photos: `assets/img/hotels/campus.jpg`, `nikko.jpg`. The archive attributes these to the Trip.com listings linked from the hotel cards: https://sg.trip.com/hotels/suzhou-hotel-detail-112212415/center-for-international-academic-exchange/ and https://sg.trip.com/hotels/detail/?cityEnName=Suzhou&cityId=14&hotelId=2229576 . Credit is retained; no new reuse permission is asserted.
+- Institution logos are imported unchanged from the archive, which records these sources: https://upload.wikimedia.org/wikipedia/en/6/6a/Nanjing_University_Logo.svg , https://upload.wikimedia.org/wikipedia/en/b/b9/NUS_coat_of_arms.svg , https://upload.wikimedia.org/wikipedia/commons/e/ec/Tsinghua_University_Logo.svg , https://upload.wikimedia.org/wikipedia/commons/a/a7/University_of_Southampton_Logo.svg . The archive adds a viewBox to the Southampton SVG. The marks remain the property of the respective universities.
+
 ## Cover photograph
 
 The title-area cover now shows Suzhou's Jinji Lake and Gate of the Orient, following the user's request for a Suzhou city photograph rather than a university cover. The photograph is a 2017 cityscape, not a claim about the city's current construction status.

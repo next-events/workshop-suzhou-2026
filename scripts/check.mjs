@@ -7,7 +7,7 @@ const originalBase = process.env.SITE_BASEURL;
 try {
   for (const base of ["", "/workshop-suzhou-2026"]) {
     process.env.SITE_BASEURL = base;
-    await build();
+    const site = await build();
     const html = await readFile(path.join(root, "_site/index.html"), "utf8");
     const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
     assert.equal(ids.length, new Set(ids).size, "IDs must be unique");
@@ -15,7 +15,12 @@ try {
     assert(html.includes('<h1 id="hero-title">Agentic AI</h1>'), "Use this year's Agentic AI theme");
     assert(!/Responsible AI|Large Foundation Models/.test(html), "Remove the previous edition's theme everywhere");
     assert(!/NExT(?!\+\+)/.test(html), "Use the correct NExT++ name");
-    assert(!/Soochow|Singapore/.test(html), "Use current Suzhou event details");
+    assert(!/Soochow/.test(html), "Use the user's Suzhou spelling");
+    assert.equal(site.city, "Suzhou");
+    assert.equal(site.conference_venue, "Nanjing University Suzhou Campus", "Singapore appears only in the organizing university name, not as the venue");
+    assert.equal(site.conference_time, "October 27–29, 2026");
+    assert.equal(site.hotels.find(hotel => hotel.id === "nikko").dates, "October 28–29");
+    assert(!/October 27–28|OCTOBER 27–28/.test(html), "Do not retain the superseded two-day conference dates");
     assert(!/{{|{%/.test(html), "All Liquid templates must be rendered");
     assert(html.includes("Invitations and registration details will be sent by email"));
     assert(!/<form\b/.test(html), "Registration remains invitation-only");
@@ -23,6 +28,30 @@ try {
     assert.deepEqual(sections, ["summary", "registration", "hotel", "schedule", "organizer", "sponsors", "location"]);
     assert.equal((html.match(/class="hotel-row"/g) || []).length, 2);
     assert.equal((html.match(/data-copy=/g) || []).length, 3);
+    assert.equal((html.match(/class="hotel-photo"/g) || []).length, 2);
+    assert(html.includes("Booking instructions for both hotels"));
+    assert(html.includes("PhD Session"));
+    assert(html.includes("Discussion on AI trends and future planning for NExT++ Workshops"));
+    assert.deepEqual(site.program.map(day => day.day), ["27", "28", "29"]);
+    for (const day of site.program) {
+      assert.equal(new Date(`${site.year}-10-${day.day}T12:00:00Z`).toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" }), day.weekday);
+    }
+    assert.deepEqual(site.program_topics.map(topic => topic.title), ["Agentic and Sovereign AI", "Safety", "Education", "Knowledge"]);
+    const program = html.match(/<table class="program-table">[\s\S]*?<\/table>/)[0];
+    assert.equal((program.match(/<tr>/g) || []).length, 4, "Render one header and three program days");
+    assert(program.includes('rowspan="2"'), "The four shared topics span October 27–28");
+    for (const topic of site.program_topics) assert(program.includes(topic.title));
+    assert.equal(site.institutions.length, 4);
+    for (const institution of site.institutions) assert(html.includes(institution.name));
+    assert.equal((html.match(/class="organizer-photo"/g) || []).length, 4);
+    for (const person of [...site.organizers, site.next_contact]) {
+      assert(html.includes(person.name));
+      assert(html.includes(`href="mailto:${person.email}"`));
+    }
+    for (const duty of site.responsibilities) assert(html.includes(duty.role) && html.includes(duty.people));
+    assert(html.includes('nextplusplus-suzhou-2026-emblem.png'));
+    assert.equal((html.match(/nextplusplus-logo\.png/g) || []).length, 2, "Preserve the official lab logo in header and footer");
+    assert(html.includes('class="container hero"'), "Preserve the current split-cover layout");
     assert(/site\.css\?v=[a-f0-9]{12}"/.test(html), "Version styles by content to prevent stale browser caches");
     assert(/site\.js\?v=[a-f0-9]{12}"/.test(html), "Version interactions by content to prevent stale browser caches");
     assert(html.includes('class="container event-strip"'), "Keep essential event facts directly below the cover");

@@ -98,6 +98,9 @@ strong { font-weight: 650; }
 .section-body > p:first-child { margin-top: 0; }
 .intro-section .intro-lead { font-size: 21px; line-height: 1.65; letter-spacing: -.35px; color: #45394e; }
 .intro-section .section-body > p:not(.intro-lead):not(.meeting-note) { color: #716879; font-size: 14px; line-height: 1.85; }
+.intro-emblem { width: 100%; max-width: 220px; margin-top: 26px; }
+.intro-emblem img { width: 100%; height: auto; }
+.intro-emblem figcaption { margin-top: 8px; color: var(--accent-dark); font-size: 12px; font-weight: 650; text-align: center; }
 .meeting-note { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 13px; margin-top: 23px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 12px; }
 .meeting-note > span { color: #74617f; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; }
 .meeting-note strong { font-weight: 550; }
@@ -118,9 +121,17 @@ strong { font-weight: 650; }
 
 /* Paired accommodation cards: dates first, then each hotel's practical details. */
 .hotels-section { grid-template-columns: 1fr; gap: 25px; }
+.booking-note { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; margin-bottom: 22px; padding: 15px 18px; border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; background: #f5f0f9; color: #4d4555; font-size: 13px; }
+.booking-note strong { color: var(--accent-dark); font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+.booking-note > span { flex: 1 1 260px; }
 .hotel-list { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.hotel-row { display: flex; flex-direction: column; min-width: 0; padding: 26px 28px 24px; border: 1px solid #e4dce9; border-radius: 14px; background: #fff; box-shadow: 0 5px 20px #4f305803; transition: border-color .2s, box-shadow .2s; }
+.hotel-row { display: flex; flex-direction: column; min-width: 0; overflow: hidden; padding: 26px 28px 24px; border: 1px solid #e4dce9; border-radius: 14px; background: #fff; box-shadow: 0 5px 20px #4f305803; transition: border-color .2s, box-shadow .2s; }
 .hotel-row:hover { border-color: #c6b3d5; box-shadow: 0 12px 30px #4f305809; }
+.hotel-photo { position: relative; margin: -26px -28px 22px; overflow: hidden; border-bottom: 1px solid var(--line); }
+.hotel-photo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.hotel-photo figcaption { position: absolute; right: 10px; bottom: 10px; padding: 3px 7px; border-radius: 4px; background: #252335b3; color: #fff; font-size: 9px; }
+.hotel-photo figcaption a { color: inherit; text-decoration: none; }
+.hotel-photo figcaption a:hover { text-decoration: underline; }
 .hotel-date { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 20px; margin-bottom: 21px; border-bottom: 1px solid var(--line); }
 .hotel-date strong { color: #624676; font-size: 21px; font-weight: 650; letter-spacing: -.7px; }
 .hotel-date span { color: #7d6c89; font-size: 12px; }
@@ -130,7 +141,7 @@ strong { font-weight: 650; }
 .hotel-body p + p { margin-top: 4px; }
 .hotel-body .address { margin-top: 10px; font-size: 12px; }
 .hotel-body .chinese-address { font-size: 11px; }
-.hotel-actions { display: flex; align-items: center; gap: 22px; padding-top: 24px; margin-top: auto; font-size: 12px; }
+.hotel-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding-top: 24px; margin-top: auto; font-size: 12px; }
 .hotel-actions > a { display: inline-flex; align-items: center; padding: 8px 13px; border-radius: 6px; background: #f2edf7; color: #68467e; text-decoration: none; font-weight: 650; }
 .hotel-actions > a:hover { background: #e9ddf2; }
 .copy-address { padding: 4px 0; background: transparent; border: 0; color: #7b5f8d; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; font-size: 11px; }
@@ -145,15 +156,34 @@ strong { font-weight: 650; }
 .program-table tbody tr:last-child > * { border-bottom: 0; }
 .program-table tbody th { font-size: 14px; font-weight: 650; color: #674477; }
 .program-table tbody th span { display: block; margin-top: 3px; font-size: 10px; font-weight: 400; color: #7a6686; }
-.pending-label { display: inline-block; padding: 4px 9px; border: 1px solid #e4dce9; border-radius: 5px; color: #775e86; background: #faf8fc; font-size: 10px; white-space: nowrap; }
+.program-table .topics-cell { vertical-align: middle; border-left: 1px solid #eee7f1; }
+.topic-list { margin: 0; padding-left: 18px; color: #4d4555; line-height: 1.9; }
+.topic-list li::marker { color: var(--accent); font-size: 11px; }
+.program-table .details-cell { color: #4d4555; }
 .program-section .section-body .section-note { font-size: 11px; }
-.partners-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-block: 29px; border-block: 1px solid #e6deec; }
-.partners-grid .section { display: block; }
-.partners-grid .section + .section { padding-left: 48px; border-left: 1px solid #e6deec; }
-.partners-grid h2 { font-size: 24px; letter-spacing: -.7px; }
-.partners-grid .section-kicker { margin-bottom: 10px; }
-.partners-grid .section-heading { margin-bottom: 10px; }
-.partners-grid p:not(.section-kicker) { color: #74607f; font-size: 12px; }
+
+/* Added organizer details share the existing type and spacing system. */
+.team-label { margin-bottom: 15px; color: #51405d; font-size: 18px; }
+.institution-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0 0 32px; padding: 0 0 24px; border-bottom: 1px solid var(--line); list-style: none; }
+.institution-list li { display: flex; flex-direction: column; align-items: center; gap: 13px; min-width: 0; padding: 12px 6px; color: #51405d; font-size: 11px; font-weight: 600; line-height: 1.5; text-align: center; }
+.institution-list img { width: 100%; height: 64px; object-fit: contain; }
+.institution-list .is-wordmark img { max-width: 190px; }
+.organizer-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; margin: 0; padding: 0; list-style: none; }
+.organizer-list li { display: flex; align-items: center; gap: 16px; min-width: 0; padding: 12px 0; }
+.organizer-list li > div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.organizer-photo { flex-shrink: 0; width: 66px; height: 88px; object-fit: cover; object-position: center top; border-radius: 8px; background: #f5f1f8; }
+.organizer-name { color: var(--ink); font-size: 16px; font-weight: 650; }
+.organizer-name span { display: inline-block; margin-left: 5px; color: #75617f; font-size: 12px; font-weight: 400; }
+.organizer-list a { width: fit-content; font-size: 12px; text-decoration: none; overflow-wrap: anywhere; }
+.organizer-list a:hover, .next-contact a:hover { text-decoration: underline; }
+.duty-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+.duty-list dt { margin-bottom: 5px; color: #776184; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.duty-list dd { margin: 0; color: #4d4555; font-size: 12px; }
+.next-contact { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; margin-top: 22px; color: #4d4555; font-size: 12px; }
+.next-contact span { color: #776184; font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+.next-contact a { text-decoration: none; overflow-wrap: anywhere; }
+.sponsors-section { padding-block: 27px; border-block: 1px solid var(--line); }
+.sponsors-section .section-body p { color: #74607f; font-size: 13px; }
 
 /* A coherent travel area: building and room on the left, readable map on the right. */
 .venue-section { grid-template-columns: 1fr; gap: 25px; }
@@ -202,6 +232,8 @@ strong { font-weight: 650; }
   .hotels-section, .venue-section { grid-template-columns: 1fr; gap: 25px; }
 }
 @media (max-width: 1000px) {
+  .institution-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .organizer-list { grid-template-columns: 1fr; }
   .container { width: calc(100% - 64px); }
   .menu-toggle { display: inline-flex; }
   .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 12px 32px 20px; background: #fcfbfd; border-bottom: 1px solid var(--line); box-shadow: 0 8px 16px #3020380d; }
@@ -233,6 +265,7 @@ strong { font-weight: 650; }
   .invitation-icon { width: 40px; height: 40px; }
   .hotels-section, .venue-section { grid-template-columns: 1fr; gap: 24px; }
   .hotel-row { padding: 22px; }
+  .hotel-photo { margin: -22px -22px 20px; }
   .hotel-body h3 { font-size: 18px; }
   .hotel-date strong { font-size: 18px; }
   .program-table th, .program-table td { padding: 15px 12px; }
@@ -243,6 +276,14 @@ strong { font-weight: 650; }
   .campus-map-block { padding: 20px; }
 }
 @media (max-width: 700px) {
+  .intro-emblem { max-width: 160px; margin-top: 20px; }
+  .intro-emblem figcaption { font-size: 11px; }
+  .institution-list { margin-bottom: 25px; gap: 12px; }
+  .institution-list img { height: 55px; }
+  .team-label { font-size: 17px; }
+  .organizer-photo { width: 60px; height: 80px; }
+  .duty-list { grid-template-columns: 1fr; gap: 14px; margin-top: 18px; }
+  .booking-note { font-size: 12px; padding: 12px 14px; margin-bottom: 18px; }
   :root { --nav-height: 68px; --section-gap: 66px; }
   .container { width: calc(100% - 44px); }
   .brand-logo { width: 91px; }
@@ -294,6 +335,7 @@ strong { font-weight: 650; }
   .registration-note { font-size: 12px; margin-top: 5px; }
   .hotel-list { grid-template-columns: 1fr; gap: 18px; }
   .hotel-row { padding: 21px; border-radius: 12px; }
+  .hotel-photo { margin: -21px -21px 18px; }
   .hotel-date { margin-bottom: 17px; padding-bottom: 17px; }
   .hotel-date strong { font-size: 19px; }
   .hotel-date span { font-size: 11px; }
@@ -302,7 +344,7 @@ strong { font-weight: 650; }
   .hotel-body .hotel-category { font-size: 8px; }
   .hotel-body .address { font-size: 11px; }
   .hotel-body .chinese-address { font-size: 10px; }
-  .hotel-actions { padding-top: 19px; font-size: 11px; gap: 22px; }
+  .hotel-actions { padding-top: 19px; font-size: 11px; gap: 10px 14px; }
   .section-note { font-size: 10px; margin-top: 13px; }
   .program-section .section-body > p { font-size: 13px; }
   .program-table { margin-top: 16px; font-size: 11px; border-radius: 10px; }
@@ -310,14 +352,8 @@ strong { font-weight: 650; }
   .program-table thead { font-size: 9px; }
   .program-table tbody th { font-size: 12px; white-space: nowrap; }
   .program-table tbody th span { font-size: 9px; }
-  .pending-label { padding: 3px 6px; font-size: 9px; white-space: normal; }
+  .topic-list { padding-left: 15px; line-height: 1.7; }
   .program-section .section-body .section-note { font-size: 10px; }
-  .partners-grid { gap: 24px; padding-block: 24px; }
-  .partners-grid .section + .section { padding-left: 23px; }
-  .partners-grid h2 { font-size: 20px; }
-  .partners-grid .section-kicker { font-size: 7px; letter-spacing: 1px; gap: 6px; }
-  .partners-grid .section-kicker::before { width: 10px; }
-  .partners-grid p:not(.section-kicker) { font-size: 11px; }
   .venue-grid { grid-template-columns: 1fr; gap: 20px; }
   .venue-info { padding: 20px; }
   .venue-details h3 { font-size: 17px; }
@@ -342,9 +378,6 @@ strong { font-weight: 650; }
   .button-primary { gap: 12px; padding-inline: 11px; }
   .event-strip .event-date { font-size: 14px; }
   .event-strip dd { font-size: 11px; }
-  .partners-grid { gap: 16px; }
-  .partners-grid .section + .section { padding-left: 16px; }
-  .partners-grid h2 { font-size: 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

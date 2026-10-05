@@ -1,4 +1,16 @@
-<div class="partners-grid">
-  <section class="section" id="organizer" aria-labelledby="organizer-title"><div class="section-heading"><p class="section-kicker">COMMUNITY</p><h2 id="organizer-title">Organizers</h2></div><p>Organizing committee to be announced.</p></section>
-  <section class="section" id="sponsors" aria-labelledby="sponsors-title"><div class="section-heading"><p class="section-kicker">SUPPORT</p><h2 id="sponsors-title">Sponsors</h2></div><p>Sponsor information to follow.</p></section>
-</div>
+<section class="section organizer-section" id="organizer" aria-labelledby="organizer-title">
+  <div class="section-heading"><p class="section-kicker">COMMUNITY</p><h2 id="organizer-title">Organizers</h2></div>
+  <div class="section-body">
+    <h3 class="team-label">Organizing Institutions</h3>
+    <ul class="institution-list">{% for institution in site.institutions %}<li{% if institution.wordmark %} class="is-wordmark"{% endif %}><img src="{{ institution.logo | relative_url }}" alt="{{ institution.name | escape }} logo" loading="lazy"><span>{{ institution.name }}</span></li>{% endfor %}</ul>
+    <h3 class="team-label">Local Arrangements Team</h3>
+    <ul class="organizer-list">
+      {% for person in site.organizers %}<li><img class="organizer-photo" src="{{ person.photo | relative_url }}" width="96" height="128" loading="lazy" alt="Portrait of {{ person.name | escape }}"><div><span class="organizer-name">{{ person.name }} <span lang="zh-CN">{{ person.chinese }}</span></span><a href="mailto:{{ person.email | escape }}">{{ person.email }}</a></div></li>{% endfor %}
+    </ul>
+    <dl class="duty-list">
+      {% for duty in site.responsibilities %}<div><dt>{{ duty.role }}</dt><dd>{{ duty.people }}</dd></div>{% endfor %}
+    </dl>
+    <p class="next-contact"><span>NExT++ contact</span>{{ site.next_contact.name }}<a href="mailto:{{ site.next_contact.email | escape }}">{{ site.next_contact.email }}</a></p>
+  </div>
+</section>
+<section class="section sponsors-section" id="sponsors" aria-labelledby="sponsors-title"><div class="section-heading"><p class="section-kicker">SUPPORT</p><h2 id="sponsors-title">Sponsors</h2></div><div class="section-body"><p>Sponsor information to follow.</p></div></section>

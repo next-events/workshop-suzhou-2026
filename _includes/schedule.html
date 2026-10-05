@@ -1,11 +1,11 @@
 <section class="section program-section" id="schedule" aria-labelledby="program-title">
-  <div class="section-heading"><p class="section-kicker">OCTOBER 27–28</p><h2 id="program-title">Program</h2></div>
+  <div class="section-heading"><p class="section-kicker">{{ site.conference_time | split: ',' | first | upcase }}</p><h2 id="program-title">Program</h2></div>
   <div class="section-body">
-    <p>The detailed program will be announced.</p>
+    <p>The program also includes a PhD Session. Session times and speakers will be announced.</p>
     <table class="program-table">
-      <caption class="sr-only">Workshop program for October 27–28, {{ site.year }}</caption>
+      <caption class="sr-only">Workshop program for {{ site.conference_time }}</caption>
       <thead><tr><th scope="col">Date</th><th scope="col">Session</th><th scope="col">Details</th></tr></thead>
-      <tbody>{% for day in site.program %}<tr><th scope="row">{{ day.month }} {{ day.day }} <span>{{ day.weekday }}</span></th><td>{{ day.title }}</td><td><span class="pending-label">To be announced</span></td></tr>{% endfor %}</tbody>
+      <tbody>{% for day in site.program %}<tr><th scope="row">{{ day.month }} {{ day.day }} <span>{{ day.weekday }}</span></th><td>{{ day.title }}</td>{% if day.topics_rowspan %}<td class="topics-cell" rowspan="{{ day.topics_rowspan }}"><ol class="topic-list">{% for topic in site.program_topics %}<li>{{ topic.title }}</li>{% endfor %}</ol></td>{% elsif day.details %}<td class="details-cell">{{ day.details }}</td>{% endif %}</tr>{% endfor %}</tbody>
     </table>
     <p class="section-note">All times are in China Standard Time (UTC+8).</p>
   </div>

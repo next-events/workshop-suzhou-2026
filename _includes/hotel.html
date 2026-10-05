@@ -1,9 +1,11 @@
 <section class="section hotels-section" id="hotel" aria-labelledby="hotel-title">
   <div class="section-heading"><p class="section-kicker">YOUR STAY</p><h2 id="hotel-title">Hotel</h2></div>
   <div class="section-body">
+    <p class="booking-note"><strong>Booking</strong><span>Booking instructions for both hotels, along with other visit arrangements, will be provided in your invitation letter.</span></p>
     <div class="hotel-list">
       {% for hotel in site.hotels %}
       <article class="hotel-row">
+        <figure class="hotel-photo"><img src="{{ hotel.photo | relative_url }}" width="960" height="660" loading="lazy" alt="Exterior of {{ hotel.name | escape }}"><figcaption>Photo: <a href="{{ hotel.trip_url | escape }}" target="_blank" rel="noopener noreferrer">Trip.com</a></figcaption></figure>
         <div class="hotel-date"><strong>{{ hotel.dates }}</strong><span>{{ site.year }}</span></div>
         <div class="hotel-body">
           <p class="hotel-category">{{ hotel.location_label }}</p>
@@ -13,12 +15,12 @@
           <p class="chinese-address" lang="zh-CN">{{ hotel.chinese }}</p>
         </div>
         <div class="hotel-actions">
+          <a href="{{ hotel.trip_url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="View {{ hotel.name | escape }} on Trip.com">Trip.com ↗</a>
           <a href="https://map.baidu.com/search/{{ hotel.map_query | url_encode }}/" target="_blank" rel="noopener noreferrer" aria-label="View {{ hotel.name }} on Baidu Maps">View map ↗</a>
           <button class="copy-address" type="button" data-copy="{{ hotel.address_zh | escape }}">Copy address</button>
         </div>
       </article>
       {% endfor %}
     </div>
-    <p class="section-note">Please refer to your invitation email for further visit arrangements.</p>
   </div>
 </section>

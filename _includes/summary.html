@@ -1,8 +1,9 @@
 <section class="section intro-section" id="summary" aria-labelledby="overview-title">
-  <div class="section-heading"><p class="section-kicker">THE WORKSHOP</p><h2 id="overview-title">Introduction</h2></div>
+  <div class="section-heading"><p class="section-kicker">THE WORKSHOP</p><h2 id="overview-title">Introduction</h2><figure class="intro-emblem"><img src="{{ '/assets/img/nextplusplus-suzhou-2026-emblem.png' | relative_url }}" width="800" height="499" loading="lazy" alt="NExT++ Suzhou 2026 emblem with an osmanthus branch, a swallow and a Suzhou garden window"><figcaption>{{ site.city }} Workshop {{ site.year }}</figcaption></figure></div>
   <div class="section-body">
     <p class="intro-lead">The <strong>NExT++ {{ site.city }} Workshop {{ site.year }}</strong> will take place on {{ site.conference_time }} at {{ site.conference_venue }}.</p>
-    <p>The workshop brings together NExT++ members and collaborators to explore the advances, applications, and future directions of {{ site.conference_name }}.</p>
+    <p>The NExT++ Workshop brings together NExT++ members and collaborators to discuss frontier research in artificial intelligence and to foster collaboration across institutions. The {{ site.year }} workshop focuses on <strong>{{ site.conference_name }}</strong>, with four sub-topics: {% for topic in site.program_topics %}{% if forloop.last %}and {% endif %}{{ topic.title }}{% if forloop.last %}.{% else %}, {% endif %}{% endfor %}</p>
+    <p>The program also includes a PhD Session to promote exchange among students, and concludes on the third day with a discussion on AI trends and future planning for the NExT++ Workshops.</p>
     <p class="meeting-note"><span>Meeting room</span><strong>{{ site.venue.room }}, {{ site.venue.building }}</strong><a href="#location">Venue &amp; map ↗</a></p>
   </div>
 </section>

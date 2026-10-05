@@ -1,13 +1,13 @@
 # Conference content. Change the edition here before rebuilding.
 title: "NExT++ 2026 Workshop · Suzhou"
-description: "Agentic AI. Join the NExT++ Workshop at Nanjing University Suzhou Campus, October 27–28, 2026. Participation by invitation."
+description: "Agentic AI. Join the NExT++ Workshop at Nanjing University Suzhou Campus, October 27–29, 2026. Participation by invitation."
 year: 2026
 city: Suzhou
 city_address: Suzhou
 conference_name: Agentic AI
 conference_venue: Nanjing University Suzhou Campus
-conference_time: October 27–28, 2026
-date_short: 27–28 OCT
+conference_time: October 27–29, 2026
+date_short: 27–29 OCT
 baseurl: ""
 url: ""
 lang: en
@@ -31,9 +31,11 @@ hotels:
     address: "1520 Taihu Avenue, Huqiu District, Suzhou, Jiangsu 215163, P.R. China"
     address_zh: 江苏省苏州市虎丘区太湖大道1520号，南京大学苏州校区国际学术交流中心
     map_query: 南京大学苏州校区国际学术交流中心
+    photo: /assets/img/hotels/campus.jpg
+    trip_url: https://sg.trip.com/hotels/suzhou-hotel-detail-112212415/center-for-international-academic-exchange/
   - id: nikko
-    dates: October 28
-    day_label: "28"
+    dates: October 28–29
+    day_label: 28–29
     location_label: Suzhou New District
     name: Hotel Nikko Suzhou
     subtitle: Suzhou New District
@@ -41,15 +43,65 @@ hotels:
     address: "No. 368 Changjiang Road, Suzhou New District, Suzhou, Jiangsu 215011, P.R. China"
     address_zh: 江苏省苏州市高新区长江路368号，苏州日航酒店
     map_query: 苏州日航酒店 长江路368号
+    photo: /assets/img/hotels/nikko.jpg
+    trip_url: https://sg.trip.com/hotels/detail/?cityEnName=Suzhou&cityId=14&hotelId=2229576
 program:
   - day: "27"
     month: OCT
     weekday: Tuesday
     title: Workshop · Day 1
+    topics_rowspan: 2
   - day: "28"
     month: OCT
     weekday: Wednesday
     title: Workshop · Day 2
+  - day: "29"
+    month: OCT
+    weekday: Thursday
+    title: Workshop · Day 3
+    details: Discussion on AI trends and future planning for NExT++ Workshops
+program_topics:
+  - title: Agentic and Sovereign AI
+  - title: Safety
+  - title: Education
+  - title: Knowledge
+institutions:
+  - name: Nanjing University
+    logo: /assets/img/institutions/nju.svg
+  - name: National University of Singapore
+    logo: /assets/img/institutions/nus.svg
+  - name: Tsinghua University
+    logo: /assets/img/institutions/tsinghua.svg
+  - name: University of Southampton
+    logo: /assets/img/institutions/southampton.svg
+    wordmark: true
+organizers:
+  - name: Wei Ji
+    chinese: 吉炜
+    email: weiji@nju.edu.cn
+    photo: /assets/img/organizers/wei-ji.jpg
+  - name: Boyan Wang
+    chinese: 王博岩
+    email: boyanwang@nju.edu.cn
+    photo: /assets/img/organizers/boyan-wang.jpg
+  - name: Zheni Zeng
+    chinese: 曾哲妮
+    email: zengzn@nju.edu.cn
+    photo: /assets/img/organizers/zheni-zeng.jpg
+  - name: Zhen Zhang
+    chinese: 张震
+    email: zhen_zhang@nju.edu.cn
+    photo: /assets/img/organizers/zhen-zhang.jpg
+next_contact:
+  name: Selene Choo
+  email: selenec@nus.edu.sg
+responsibilities:
+  - role: General coordination
+    people: Wei Ji, Zheni Zeng
+  - role: Transportation
+    people: Zhen Zhang, Liang Ju
+  - role: Registration
+    people: Boyan Wang, Changyou Tao
 exclude:
   - node_modules
   - package.json
