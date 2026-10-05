@@ -25,9 +25,9 @@ try {
     assert(html.includes("Invitations and registration details will be sent by email"));
     assert(!/<form\b/.test(html), "Registration remains invitation-only");
     const sections = [...html.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)].map((match) => match[1]);
-    assert.deepEqual(sections, ["summary", "registration", "schedule", "location", "hotel", "organizer", "sponsors"]);
+    assert.deepEqual(sections, ["summary", "registration", "schedule", "hotel", "organizer", "location", "sponsors"]);
     const nav = html.match(/<div class="nav-links"[\s\S]*?<\/div>/)[0];
-    assert.deepEqual([...nav.matchAll(/href="#([^"]+)"/g)].map(match => match[1]), ["summary", "schedule", "location", "hotel", "organizer", "sponsors", "registration"]);
+    assert.deepEqual([...nav.matchAll(/href="#([^"]+)"/g)].map(match => match[1]), ["summary", "schedule", "hotel", "organizer", "location", "sponsors", "registration"]);
     assert.equal((html.match(/class="hotel-row"/g) || []).length, 2);
     assert.equal((html.match(/data-copy=/g) || []).length, 3);
     assert.equal((html.match(/class="hotel-photo"/g) || []).length, 2);
