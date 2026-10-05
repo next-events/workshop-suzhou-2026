@@ -23,20 +23,16 @@
   {% include "nav-bar.html" %}
   <main id="main">
     <div class="opening">
-    <header class="container hero" aria-labelledby="hero-title">
-      <div class="hero-content">
+    <header class="hero" aria-labelledby="hero-title">
+      <figure class="hero-visual">
+        <img class="hero-image" src="{{ '/assets/img/suzhou-jinji-lake.jpg' | relative_url }}" alt="Aerial view of Suzhou, with Jinji Lake, the Gate of the Orient and the surrounding city skyline" width="1280" height="914" fetchpriority="high">
+      </figure>
+      <div class="container hero-content">
         <p class="hero-edition">NExT++ Workshop · {{ site.city }} {{ site.year }}</p>
         <h1 id="hero-title">{{ site.conference_name }}</h1>
-        <p class="hero-location">{{ site.conference_venue }}</p>
-        <div class="hero-actions"><a class="button-primary" href="#location">Plan your visit <span aria-hidden="true">↗</span></a><a class="button-text" href="#registration">Participation details <span aria-hidden="true">→</span></a></div>
+        <p class="hero-location">{{ site.conference_time }} · {{ site.conference_venue }}</p>
+        <div class="hero-actions"><a href="#location">Venue &amp; travel</a><a href="#registration">Participation</a></div>
       </div>
-      <figure class="hero-visual">
-        <div class="hero-photo">
-          <img class="hero-image" src="{{ '/assets/img/suzhou-jinji-lake.jpg' | relative_url }}" alt="Aerial view of Suzhou, with Jinji Lake, the Gate of the Orient and the surrounding city skyline" width="1280" height="914" fetchpriority="high">
-          <a class="photo-credit" href="https://commons.wikimedia.org/wiki/File:%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg" target="_blank" rel="noopener noreferrer">Photo source ↗</a>
-        </div>
-        <figcaption><span>Jinji Lake &amp; Gate of the Orient<span lang="zh-CN">苏州 · 金鸡湖与东方之门</span></span><span class="campus-caption">SUZHOU, CHINA</span></figcaption>
-      </figure>
     </header>
     <dl class="container event-strip" aria-label="Workshop at a glance">
       <div class="event-when"><dt>WHEN</dt><dd class="event-date">{{ site.conference_time }}</dd></div>
@@ -47,15 +43,15 @@
     <div class="container conference-content">
       {% include "summary.html" %}
       {% include "registration.html" %}
-      {% include "hotel.html" %}
       {% include "schedule.html" %}
-      {% include "organizer.html" %}
+      {% include "hotel.html" %}
       {% include "location.html" %}
+      {% include "organizer.html" %}
     </div>
   </main>
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand footer-brand" href="#page-top" aria-label="NExT++ Workshop, back to top"><img class="brand-logo" src="{{ '/assets/img/nextplusplus-logo.png' | relative_url }}" width="247" height="80" alt="NExT++ Research Centre"></a>
+      <a class="brand footer-brand" href="#page-top" aria-label="NExT++ Workshop, back to top"><img class="brand-logo" src="{{ '/assets/img/nextplusplus-blocks.png' | relative_url }}" width="600" height="200" alt="NExT++"><span class="brand-edition"><strong>{{ site.city }} Workshop</strong><span>{{ site.date_short }} {{ site.year }}</span></span></a>
       <div class="footer-credit"><span>© {{ site.year }} NExT++ Workshop</span><span>Venue photography &amp; map: Nanjing University</span><details class="photo-credits"><summary>Photo credits</summary><p>Cover photo: <a href="https://commons.wikimedia.org/wiki/File:%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg" target="_blank" rel="noopener noreferrer" lang="zh-CN">铁头娃蛤蛤</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · Cropped &amp; resized</p></details></div>
       <div class="footer-links"><a href="https://next-events.github.io/workshop-dec-2024/" target="_blank" rel="noopener noreferrer">2024 workshop ↗</a><a href="#page-top">Back to top ↑</a></div>
     </div>

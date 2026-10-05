@@ -25,7 +25,9 @@ try {
     assert(html.includes("Invitations and registration details will be sent by email"));
     assert(!/<form\b/.test(html), "Registration remains invitation-only");
     const sections = [...html.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)].map((match) => match[1]);
-    assert.deepEqual(sections, ["summary", "registration", "hotel", "schedule", "organizer", "sponsors", "location"]);
+    assert.deepEqual(sections, ["summary", "registration", "schedule", "hotel", "location", "organizer", "sponsors"]);
+    const nav = html.match(/<div class="nav-links"[\s\S]*?<\/div>/)[0];
+    assert.deepEqual([...nav.matchAll(/href="#([^"]+)"/g)].map(match => match[1]), ["summary", "schedule", "hotel", "location", "organizer", "sponsors", "registration"]);
     assert.equal((html.match(/class="hotel-row"/g) || []).length, 2);
     assert.equal((html.match(/data-copy=/g) || []).length, 3);
     assert.equal((html.match(/class="hotel-photo"/g) || []).length, 2);
@@ -50,12 +52,14 @@ try {
     }
     for (const duty of site.responsibilities) assert(html.includes(duty.role) && html.includes(duty.people));
     assert(html.includes('nextplusplus-suzhou-2026-emblem.png'));
-    assert.equal((html.match(/nextplusplus-logo\.png/g) || []).length, 2, "Preserve the official lab logo in header and footer");
-    assert(html.includes('class="container hero"'), "Preserve the current split-cover layout");
+    assert.equal((html.match(/nextplusplus-blocks\.png/g) || []).length, 2, "Use the attachment's NExT++ masthead in header and footer");
+    assert(html.includes('class="hero"') && html.includes('class="container hero-content"'), "Use the attachment's full-width cover with overlay title");
+    const hero = html.match(/<header class="hero"[\s\S]*?<\/header>/)[0];
+    assert(!/Photo:|CC BY-SA|Cropped|铁头娃蛤蛤/.test(hero), "Do not show the credit line on the cover");
     assert(/site\.css\?v=[a-f0-9]{12}"/.test(html), "Version styles by content to prevent stale browser caches");
     assert(/site\.js\?v=[a-f0-9]{12}"/.test(html), "Version interactions by content to prevent stale browser caches");
     assert(html.includes('class="container event-strip"'), "Keep essential event facts directly below the cover");
-    assert(html.includes('class="hero-visual"'), "Reserve a separate image area for the Suzhou cityscape");
+    assert(html.includes('class="hero-visual"'), "Keep the Suzhou cityscape in the full-width cover");
     assert.equal((html.match(/suzhou-jinji-lake\.jpg/g) || []).length, 3, "Use the Suzhou city photograph for the cover, preload and social preview");
     assert(!html.includes('suzhou-campus-name-stone.jpg'), "The cover now represents Suzhou city rather than the university");
     assert(html.includes('CC BY-SA 4.0') && html.includes('铁头娃蛤蛤'), "Keep the city photograph's author and license attribution");
